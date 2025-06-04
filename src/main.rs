@@ -36,7 +36,7 @@ async fn handle_inline_query(
     .description(fixed);
 
     bot.answer_inline_query(q.id, vec![InlineQueryResult::Article(result)])
-        .cache_time(0)
+        .cache_time(60 * 60 * 24)
         .send()
         .await?;
 
